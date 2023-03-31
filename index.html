@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="utf-8"/>
+                <title>Home Page</title>
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="./global_funcs.js"></script>
+        </head>
+    <body>
+
+        <div class="course_pic" id="homepage">
+            <!--Image for parallax effect, not empty class-->
+        </div>
+
+        <div class="header">
+            <a href="./index.html"><picture><img  src="./media/xxeelg0amua51.png" alt="main page"></picture>
+            </a>
+            <a href="./index.html">Royal Learning</a>
+            <a href="javascript:void(0)" onClick="menuToggle();">Menu</a>
+        </div>
+
+        <div class="sidebar">
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Courses</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./support.html">Support</a>
+            <a href="./signUp.html">Sign Up</a>
+        </div>
+
+        <div class = "h1">
+            <h1 class="display-1">Welcome to Royal Learning</h1>
+        </div>
+
+        <div class="slidesBox hide-on-small-screen" id="red">
+            <button class="slide-button button-display-left" onclick="plusDivs(-1)">&#10094;</button>
+            <a href="./programming_courses.html"><img class="mySlides" alt="slide_1" src="./media/slide_1.png" width="250" height="400"></a>
+            <a href="./entrepreneurship_courses.html"><img class="mySlides" alt="slide_2" src="./media/slide_2.1.png" width="250" height="400"></a>
+            <a href="./japanese_courses.html"><img class="mySlides" alt="slide_3" src="./media/slide_3.png" width="250" height="400"></a>
+
+            <button class="slide-button button-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        </div>
+
+        <script>
+            var slideIndex = 1;
+                showDivs(slideIndex);
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                if (n > x.length) {slideIndex = 1}
+                if (n < 1) {slideIndex = x.length} ;
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                x[slideIndex-1].style.display = "block";
+            }
+        </script>
+
+        <main class="container-main">
+            <div class="content instructor" id="pink">
+                <div>
+                    <img src="./media/instructor.jpg" alt="instructor_photo" width="280" height="200" >
+                </div>
+
+                <div>
+                    <h2 class="display-2">Become an Instructor</h2>
+                    <p>Instructors from around the world teach thousands of students on Royal Learning. We provide the tools and skills to teach what you love.</p>
+                </div>
+            </div>
+
+            <div class="content knowledge" id="blue">
+                <div>
+                    <h2 class="display-2">Expand your knowledge</h2>
+                    <p>Get unlimited access to 300+ of Royal Learning’s top courses for your team , company or own self . Learn and improve skills across business, tech, languages, and more.</p>
+                </div>
+
+                <div>
+                    <img src="./media/knowledge.jpg" alt="book" width="280" height="200" >
+                </div>
+
+
+            </div>
+
+            <div class="content education" id="orange">
+                <div>
+                    <img src="./media/edu.jpg" alt="education" width="280" height="200" >
+                </div>
+
+                <div>
+                    <h2 class="display-2">Transform your life through education</h2>
+                    <p>Learners around the world are launching new careers, advancing in their fields, and enriching their lives.</p>
+                </div>
+
+            </div>
+
+            <div class="content button" id="orange_btn">
+                <a href="./courses.html" >Start Now!</a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>Learn more about our team <a href="./AboutUs.html">here</a>!. Or contact us on +30 210 9999999</p>
+            <p>Visit out social media!
+                <a href = https://www.facebook.com/%3E>facebook </a>
+                / <a href = https://www.reddit.com/%3E>reddit</a>
+                / <a href = https://www.linkedin.com/%3E>LinkedIn.</a>
+            </p>
+        </footer>
+        <script>
+            // Blur effect script, when the user scrolls down 50px from the top of the document, change header and sidebar properties
+            window.onscroll = function () { scrollFunction() };
+            document.querySelector(".course_pic").style.transform = "scale(1.25, 1.25)";
+
+            var scrolledPast = false;
+            function scrollFunction() {
+                var scrollFromTop = 170;
+
+
+                if (window.scrollY > scrollFromTop) {
+                    scrolledPast = true;
+
+
+                    document.querySelector(".header").classList.add("scrolled");
+                    document.querySelector(".header").classList.remove("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("top-effect");
+                    document.querySelector(".sidebar").classList.add("blur-effect");
+
+                }
+                if (window.scrollY <= scrollFromTop) {
+                    scrolledPast = false;
+
+                    document.querySelector(".header").classList.remove("scrolled");
+                    document.querySelector(".header").classList.add("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("blur-effect");
+                    document.querySelector(".sidebar").classList.add("top-effect");
+                }
+                if(window.scrollY <= 400){
+                    var text = "scale(1.25, 1.25)";
+                    var container = "translateY("+-window.scrollY/6+"px)";
+                    document.querySelector(".course_pic").style.transform = text;
+                    document.querySelector(".course_pic").style.transform += container;
+                }
+            }
+        </script>
+    </body>
+</html>

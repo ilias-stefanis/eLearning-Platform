@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="./global_funcs.js"></script>
+    <title>About Us</title>
+</head>
+
+    <body>
+	    <div class="header">
+            <a href="./index.html"><picture><img src="./media/xxeelg0amua51.png" alt="header_picture"></picture>
+            </a>
+            <a href="./index.html">Royal Learning</a>
+            <a href="javascript:void(0)" onClick="menuToggle();">Menu</a>
+        </div>
+
+        <div class="sidebar" >
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Courses</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./support.html">Support</a>
+            <a href="./signUp.html">Sign Up</a>
+        </div>
+        <div class = "h1">
+            <h1 class="display-1">Η Ομάδα Μας</h1>
+        </div>
+        <main class="container-main">
+
+            <div class = "about_us_1">
+                <h2 class="display-2">Ιωάννης Μακρίδης</h2>
+                <div class="content">
+                    <div>
+                        <img src="./media/fire.jpg" alt="Fire" >
+                    </div>
+                    <p>
+                        Προπτυχιακό στο τμήμα πληροφορικής του <a href = https://www.aueb.gr>Οικονομικού Πανεπιστημίου Αθήνας</a> , μεταπτυχιακό
+                        στο τμήμα <a href = "https://mit-online.getsmarter.com/presentations/lp/mit-machine-learning-online-short-course/">Machine Learning in Business του MIT</a>. Φιλάνθρωπική και εθελοντική δράση σε
+                        ΜΚΟ οπως η <a href = "https://www.wwf.gr/">WWF</a> και <a href = "https://www.unicef.org/">Unicef</a> σχετικά με τη προστασία του περιβάλλοντος και της βοήθειας άπορων
+                        ατόμων σε πανελλαδικό επίπεδο. Πολλαπλές διακρίσεις σε πανελλήνιο επίπεδο στη κολύμβηση με πολλαπλές διακρίσεις και πρωτεία.Προυπηρεσία στη Google ως software engineer and senior software engineer
+                        και πολλαπλές επιβραβέυσεις ως employer of the month. 12χρονη εμπειρία στη μουσική θεωρία , <a href="https://en.wikipedia.org/wiki/Harmony">αρμονία</a> και
+                        πιάνο καθώς και στη διδασκαλία μουσικής εως και επιπέδου διπλώματος.
+                    </p>
+                </div>
+            </div>
+
+            <div class = "about_us_2">
+                <h2 class="display-2">Ηλίας Στεφανής</h2>
+                <div class ="content">
+                    <p>
+                        Προπτυχιακό στο τμήμα πληροφορικής του <a href = https://www.aueb.gr>Οικονομικού Πανεπιστημίου Αθήνας</a> , μεταπτυχιακό
+                        στο τμήμα <a href = "https://mit-online.getsmarter.com/presentations/lp/mit-data-science-in-real-estate-online-short-course/">Data Science in Real Estate του MIT</a>.
+                        Πρακτική στη εταιρία βιντεοπαιχνιδιών <a href="https://www.riotgames.com/el">Riot</a>
+                        (2019-2020). Φιλάνθρωπική δράση προς τους <a href = "https://mkoapostoli.com/">πυρόπληκτους</a> του 2021 και συνεχή δράση για τη
+                        διαφύλαξη των φυσικών πόρων της χώρας. Διακρίσεις σε gaming διαγωνισμούς σε πανελλήνιο επίπεδο
+                        σε παιχνίδια όπως rocket league , league of legends , overwatch, tetris , tekken7. <a href="https://en.wikipedia.org/wiki/Mr._Olympia">Mr Olympia</a>
+                        2019 και 2020 και το πρόσωπο του vogue το 2021 . Συνιδρυτής start-up cureCancer.com για την
+                        αντιμετώπιση του καρκίνου.
+                    </p>
+                    <div>
+                        <img src="./media/hollow.jpg" alt="Hollow Img">
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Learn more about our team <a href="./AboutUs.html">here</a>!. Or contact us on +30 210 9999999</p>
+            <p>Visit out social media!
+                <a href = https://www.facebook.com/%3E>facebook </a>
+                / <a href = https://www.reddit.com/%3E>reddit</a>
+                / <a href = https://www.linkedin.com/%3E>LinkedIn.</a>
+            </p>
+        </footer>
+        <script>
+            // Blur effect script, when the user scrolls down 50px from the top of the document, change header and sidebar properties
+            window.onscroll = function () { scrollFunction() };
+
+            var scrolledPast = false;
+            function scrollFunction() {
+                var scrollFromTop = 120;
+
+
+                if (window.scrollY > scrollFromTop) {
+                    scrolledPast = true;
+
+
+                    document.querySelector(".header").classList.add("scrolled");
+                    document.querySelector(".header").classList.remove("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("top-effect");
+                    document.querySelector(".sidebar").classList.add("blur-effect");
+
+                }
+                if (window.scrollY <= scrollFromTop) {
+                    scrolledPast = false;
+
+                    document.querySelector(".header").classList.remove("scrolled");
+                    document.querySelector(".header").classList.add("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("blur-effect");
+                    document.querySelector(".sidebar").classList.add("top-effect");
+                }
+            }
+        </script>
+    </body>
+</html>

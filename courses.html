@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+            <meta charset="utf-8"/>
+                <title>Popular Courses</title>
+                <link rel="stylesheet" type="text/css" href="style.css">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <script src="./global_funcs.js"></script>
+        </head>
+    <body>
+
+
+        <div class="header">
+            <a href="./index.html"><picture><img  src="./media/xxeelg0amua51.png" alt="main page"></picture>
+            </a>
+            <a href="./index.html">Royal Learning</a>
+            <a href="javascript:void(0)" onClick="menuToggle();">Menu</a>
+        </div>
+
+        <div class="sidebar">
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Courses</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./support.html">Support</a>
+            <a href="./signUp.html">Sign Up</a>
+        </div>
+
+        <div class = "h1">
+            <h1 class="display-1">Our Courses</h1>
+        </div>
+
+        <main class="container-main">
+            <h2 class="course-title">Computer Science Courses</h2>
+            <div class="content Courses">
+                <ul>
+                    <li>Python
+                    <li>Java
+                    <li><a href = "https://www.edx.org/course/html5-and-css-fundamentals">HTML & CSS</a>
+                    <li>Assembly
+                    <li>Javascript
+                    <li><a href = "programming_courses.html">Computer Science</a>
+                    <li>Computer Graphics and C++
+                    <li>MySQL
+                    <li>Unreal Engine and C#
+                    <li>Pearl
+                </ul>
+                <div>
+                    <img src = "./media/cour_1.jpg" alt = "CS courses pic">
+                </div>
+            </div>
+
+            <h2 class="course-title">Business & Management</h2>
+            <div class="content Courses">
+                <ul>
+                    <li>Investments
+                    <li>Business Finance
+                    <li>Financial Planning
+                    <li>Capital Structure
+                    <li><a href = "https://www.edx.org/course/statistical-learning">Statistics</a>
+                    <li>Marketing
+                    <li><a href = "entrepreneurship_courses.html">Entrepreneuership</a>
+                    <li>Economics
+                    <li>Informatics in Finance
+                </ul>
+                <div>
+                    <img src = "./media/cour_2.jpg" alt = "Buisness courses pic">
+                </div>
+            </div>
+
+            <h2 class="course-title">Language</h2>
+            <div class="content Courses">
+                <ul>
+                    <li><a href = "https://www.edx.org/course/academic-english">English</a>
+                    <li>Greek
+                    <li>Chinese
+                    <li>French
+                    <li>German
+                    <li><a href = "japanese_courses.html">Japanese</a>
+                    <li>Spanish
+                    <li>Sign Language
+                    <li>Listening
+                    <li>Portugese
+                    <li>Thai
+                </ul>
+                <div>
+                    <img src = "./media/cour_3.jpg" alt = "Language courses pic">
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+            <p>Learn more about our team <a href="./AboutUs.html">here</a>!. Or contact us on +30 210 9999999</p>
+            <p>Visit out social media!
+                <a href = https://www.facebook.com/%3E>facebook </a>
+                 / <a href = https://www.reddit.com/%3E>reddit</a>
+                 / <a href = https://www.linkedin.com/%3E>LinkedIn.</a>
+            </p>
+        </footer>
+        <script>
+            // Blur effect script, when the user scrolls down 50px from the top of the document, change header and sidebar properties
+            window.onscroll = function () { scrollFunction() };
+
+            var scrolledPast = false;
+            function scrollFunction() {
+                var scrollFromTop = 120;
+
+
+                if (window.scrollY > scrollFromTop) {
+                    scrolledPast = true;
+
+
+                    document.querySelector(".header").classList.add("scrolled");
+                    document.querySelector(".header").classList.remove("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("top-effect");
+                    document.querySelector(".sidebar").classList.add("blur-effect");
+
+                }
+                if (window.scrollY <= scrollFromTop) {
+                    scrolledPast = false;
+
+                    document.querySelector(".header").classList.remove("scrolled");
+                    document.querySelector(".header").classList.add("ontop");
+
+                    document.querySelector(".sidebar").classList.remove("blur-effect");
+                    document.querySelector(".sidebar").classList.add("top-effect");
+                }
+            }
+        </script>
+    </body>
+</html>

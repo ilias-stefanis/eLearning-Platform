@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Sign Up</title>
+
+    <style>
+        body {
+            background: url("./media/signup_bg.jpg") no-repeat center center fixed;
+            background-repeat: no-repeat;
+            background-size:  cover;
+        }
+    </style>
+
+</head>
+
+<body>
+	<div class="header">
+        <a href="./index.html"><picture><img  src="./media/xxeelg0amua51.png" alt="Logo"></picture>
+        </a>
+        <a href="./index.html">Royal Learning</a>
+        <a href="javascript:void(0)" onClick="menuToggle();">Menu</a>
+    </div>
+
+    <div class="sidebar" >
+        <a href="./index.html">Home</a>
+        <a href="./courses.html">Courses</a>
+        <a href="./AboutUs.html">About Us</a>
+        <a href="./support.html">Support</a>
+        <a href="./signUp.html">Sign Up</a>
+    </div>
+
+    <main class="container-signup">
+        <form>
+            <fieldset class="signup_form">
+                <legend>User General Info</legend>
+
+                    <ul class="h2">
+                            <li class="form-container">
+
+                                <label for="first_name">Name: </label>
+                                <input class="input-support" type="text" id="first_name" placeholder="John" name="name" required>
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="last_name">Surname: </label>
+                                <input class="input-support" type="text" id="last_name" placeholder="Doe" name="name" required>
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="address">Address: </label>
+                                <input class="input-support" type="text" id="address" placeholder="Address" name="address" required>
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="zip">Zip address: </label>
+                                <input class="input-support" type="text" id="zip" placeholder="111 11" name="zip" required>
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="country">Country: </label>
+                                <input class="input-support" type="text" id="country" placeholder="Start typing country" name="myCountry">
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="date">Date of Birth: </label>
+                                <input class="input-support" type="date" id="date" name="date" required>
+                            </li>
+
+                            <li class="form-container">
+
+                                <label for="tel">Phone: </label>
+                                <input class="input-support" type="tel" id="tel" placeholder="123 456 7890" name="tel" pattern="[0-9]" maxlength="10">
+                            </li>
+                        </ul>
+            </fieldset>
+
+            <fieldset class="signup_form">
+                <legend>Account Info</legend>
+                    <ul class="h2">
+
+                            <li class="form-container">
+                                <label for="username">Username: </label>
+                                <input class="input-support" type="text" id="username" placeholder="user" name="name" required>
+                            </li>
+
+                            <li class="form-container">
+                                <label for="txt_email">Email: </label>
+                                <input class="input-support"  type="email" id="txt_email" placeholder="abc@email.com" name="email" required>
+                            </li>
+
+                            <li class="form-container">
+                                <label for="psw"><b>Password: </b></label>
+                                <div>
+                                    <input class="input-support" type="password" placeholder="Enter Password" name="psw" id="psw" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"  required>
+                                    <button class="small_button" onclick="passwordVisibility(this); return false;">
+                                        <img src="./media/hide_pw.png" class="icon icon_hide" alt="" >
+                                    </button>
+                                </div>
+                            </li>
+
+                            <li class="form-container">
+                                <label for="psw-repeat">
+                                    <b>Repeat Password: </b>
+                                </label>
+                                <input class="input-support" type="password" placeholder="Repeat Password" id="psw-repeat" name="psw_repeat" required>
+                            </li>
+
+                            <li id="message">
+                                <h3>Password must contain the following:</h3>
+                                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                                <p id="number" class="invalid">A <b>number</b></p>
+                                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+                                <p id="pw_same" class="invalid">Passwords <b>match</b></p>
+                            </li>
+
+                            <li class="form-container">
+                                <label>You have to accept out Terms of Service to continue</label>
+
+                                <label class="switch">
+                                    <input type="checkbox" required>
+                                    <span class="slider"></span>
+                                </label>
+                            </li>
+
+                        </ul>
+            </fieldset>
+
+            <fieldset class="signup_form">
+                <legend>Billing Info</legend>
+                <ul class="h2">
+                        <li class="form-container" style="display:flex; flex-direction:row;">
+                            Available Cards:
+                            <img src="./media/cc_icon1.png" class="icon_small" id="mastercard" alt="">
+                            <img src="./media/cc_icon2.png" class="icon_small" id="visa" alt="">
+                            <img src="./media/cc_icon3.png" class="icon_small" id="am_ex" alt="">
+                        </li>
+
+                        <li class="form-container">
+                            <label for="cnum">CC Number: </label>
+                            <input class="input-support" type="text" id="cnum" placeholder="1234 1234 1234" name="cardnumber" required maxlength="16">
+                        </li>
+
+                        <li class="form-container">
+                            <label for="cname">Name on Card: </label>
+                            <input class="input-support" type="text" id="cname" placeholder="Name Inscribed" name="cname" required>
+                        </li>
+
+                        <li class="form-container">
+                            <label for="cardexpmonth">Expiration Date: </label>
+                            <input class="input-support" type="month" id="cardexpmonth" name="cardexpmonth" required>
+                        </li>
+
+                        <li class="form-container">
+                            <label for="cvv"><b>CVV: </b></label>
+                            <input class="input-support" type="password" id="cvv" placeholder="3-digit Code on the back" name="cvv" maxlength="3" required>
+                        </li>
+                    </ul>
+            </fieldset>
+
+            <details>
+                <summary>
+                    <h1 id="h1_supportPageQuestions"><span id="h1_hideOnClick">Click Here for </span>Additional Question</h1>
+                </summary>
+            <fieldset class="question_form">
+                <h1>1. What is your gender?</h1>
+                <div class="question_container">
+                    <label class="radiobox">Male
+                        <input type="radio" checked="checked" name="radio" id="q1_1">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">Female
+                        <input type="radio" name="radio" id="q1_2" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">Other
+                        <input type="radio" name="radio" id="q1_3" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">Prefer not to say
+                        <input type="radio" name="radio" id="q1_4" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </fieldset>
+
+
+            <fieldset class="question_form">
+                <h1>2. What is your education level?</h1>
+                <div class="question_container">
+                    <label class="radiobox">Middle School Degree
+                        <input type="radio" checked="checked" name="radio" id="q2_1">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">High School Degree
+                        <input type="radio" name="radio" id="q2_2" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">Bachelor
+                        <input type="radio" name="radio" id="q2_3" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">Master
+                        <input type="radio" name="radio" id="q2_4" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>3. Which course are you interested in?</h1>
+                <div class="form-container" style="margin: 0em;">
+                    <select class="input-support" id="type_of_question" name="type">
+                        <option value="" disabled selected hidden>Select Course</option>
+                        <optgroup label="Programming Courses">
+                            <option value="q3_11">Computer Science and Mobile Apps</option>
+                            <option value="q3_12">Computer Science for Game Development</option>
+                            <option value="q3_13">Bitcoin and Cryptocurrencies</option>
+                            <option value="q3_14">Quantum Computing & Quantum Internet</option>
+                            <option value="q3_15">Computer Science for Artificial Intelligence</option>
+                        </optgroup>
+                        <optgroup label="Entrepreneurship Courses">
+                            <option value="q3_21">Mindset of a successful entrepreneur</option>
+                            <option value="q3_22">Importance of risk taking</option>
+                            <option value="q3_23">Economics in Entrepreneuership</option>
+                            <option value="q3_24">To build a Company</option>
+                            <option value="q3_25">Technology of Entrepreneurship</option>
+                        </optgroup>
+                        <optgroup label="Japanese Courses">
+                            <option value="q3_31">Steps in Japanese for Beginners</option>
+                            <option value="q3_32">Steps in Japanese for Beginners 2</option>
+                            <option value="q3_33">EconVisualizing Japan (1850s-1930s)</option>
+                            <option value="q3_34">Japanese Architecture and Structural Design</option>
+                            <option value="q3_35">Basic Japanese Civil Law</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>4. What is your most preferable hobby?</h1>
+                <div class="form-container" style="margin: 0em;">
+
+                <select class="input-support" id="hobby" name="type">
+                    <option value="" disabled selected hidden>Select Hobby</option>
+                    <optgroup label=" Outdoor Hobbies:">
+                        <option value="q4_1">Running</option>
+                        <option value="q4_2">Fishing</option>
+                        <option value="q4_3">Cycling</option>
+                        <option value="q4_4">Camping</option>
+                        <option value="q4_5">Skiing</option>
+                        <option value="q4_6">Hiking</option>
+                        <option value="q4_7">Swimming</option>
+                    </optgroup>
+
+                    <optgroup label=" Group Activities:">
+                        <option value="q4_8">Football</option>
+                        <option value="q4_9">Tennis</option>
+                        <option value="q4_10">Basketball</option>
+                        <option value="q4_11">Volleyball</option>
+                        <option value="q4_12">Wrestling</option>
+                        <option value="q4_13">Ice Hockey</option>
+                    </optgroup>
+
+                    <optgroup label=" Indoor Hobbies:">
+                        <option value="q4_14">Drawing</option>
+                        <option value="q4_15">Playing Music</option>
+                        <option value="q4_16">Woodworking</option>
+                        <option value="q4_17">Reading Books</option>
+                        <option value="q4_18">Gaming</option>
+                        <option value="q4_19">YouTubing New Skills</option>
+                        <option value="q4_20">Programming</option>
+                        <option value="q4_21">Cooking</option>
+                        <option value="q4_22">Watching Movies</option>
+                    </optgroup>
+
+                    <optgroup label=" Other:">
+                        <option value="q4_23">Other</option>
+                    </optgroup>
+                </select></div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>5. Which social media do you use most frequently?</h1>
+                <div class="form-container" style="margin: 0em;">
+
+                    <select class="input-support" id="social_media" name="type">
+                        <option value="" disabled selected hidden>Select Social Media</option>
+                        <option value="q5_3">Instagram</option>
+                        <option value="q5_1">Youtube</option>
+                        <option value="q5_2">Twitch</option>
+
+                        <option value="q5_4">Twitter</option>
+                        <option value="q5_5">Pinterest</option>
+                        <option value="q5_6">Snapchat</option>
+                        <option value="q5_7">Facebook</option>
+                        <option value="q5_8">TikTok</option>
+                        <option value="q5_9">Messenger</option>
+                        <option value="q5_10">Discord</option>
+                        <option value="q5_11">LinkedIn</option>
+                        <option value="q5_12">What's Up App</option>
+                        <option value="q5_13">Other</option>
+                        <option value="q5_14">I don't use social media</option>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>6. How did you find our site?</h1>
+                <div class="form-container" style="margin: 0em;">
+
+                    <select class="input-support" id="find" name="type">
+                        <option value="" disabled selected hidden>Select</option>
+                        <option value="q6_1">A friend/relative recommended us</option>
+                        <option value="q6_2">You searched for our site</option>
+                        <option value="q6_3">You searched for courses on your browser</option>
+                        <option value="q6_4">You saw our fliers</option>
+                        <optgroup label="From Social Media Ads">
+                            <option value="q6_5">Instagram</option>
+                            <option value="q6_6">Youtube</option>
+                            <option value="q6_7">Google</option>
+                            <option value="q6_8">Reddit</option>
+                            <option value="q6_9">Facebook</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form" style="flex-direction: column; align-items: start;">
+                <h1>7. How likely are you to recommend our site to a friend/colleague?</h1>
+                <div class="sliderContainer">
+                    <input type="range" min="1" max="5" value="3" class="sliderQuestion" id="Range" oninput="slider_result_view();">
+                    <p><span id="slider_result">Maybe</span></p>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>8. How many hours per day on average you dedicate on studying or learning new things?</h1>
+                <div class="question_container">
+                    <label class="radiobox">&lt; 1 hour
+                        <input type="radio" checked="checked" name="radio" id="q8_1">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">1 - 2 hours
+                        <input type="radio" name="radio" id="q8_2" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">2 - 4 hours
+                        <input type="radio" name="radio" id="q8_3" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">4+ hours
+                        <input type="radio" name="radio" id="q8_4" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form">
+                <h1>9. In your opinion, what is a good price for a month long course?</h1>
+                <div class="question_container">
+                    <label class="radiobox">&lt; 40 €
+                        <input type="radio" checked="checked" name="radio" id="q9_1">
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">41 - 80 €
+                        <input type="radio" name="radio" id="q9_2" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">81 - 120 €
+                        <input type="radio" name="radio" id="q9_3" >
+                        <span class="checkmark"></span>
+                    </label>
+                    <label class="radiobox">more than 120 €
+                        <input type="radio" name="radio" id="q9_4" >
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="question_form" id="special-input" style="justify-content:flex-start;">
+                <h1>10. What changes would you recommend for this site?</h1>
+                <div class="twit-style-container" id="support_bigtext_container" style="width:100%;">
+                    <textarea class="input-support" id="support_bigtext" name="comment" maxlength="400" oninput="charCount()" placeholder="Type your comment here."></textarea>
+                    <a id="current-chars">400/400</a>
+                </div>
+            </fieldset>
+            </details>
+            <div class="form-container">
+                <input class="button_form" type="submit" id="btn_submit" name="submit">
+            </div>
+        </form>
+    </main>
+
+    <footer class="footer" id="footer-support">
+        <p>Learn more about our team <a href="./AboutUs.html">here</a>!. Or contact us on +30 210 9999999</p>
+        <p>Visit out social media!
+            <a href = https://www.facebook.com/%3E>facebook </a>
+             / <a href = https://www.reddit.com/%3E>reddit</a>
+             / <a href = https://www.linkedin.com/%3E>LinkedIn.</a>
+        </p>
+    </footer>
+
+    <script src="./global_funcs.js"></script>
+    <script>
+
+        document.querySelector(".sidebar").classList.add("blur-effect");
+        function charCount() {
+            var currentLength = document.getElementById("support_bigtext").value.length;
+            var maxLength = document.getElementById("support_bigtext").maxLength;
+            document.getElementById("current-chars").innerHTML = maxLength - currentLength + "/400";
+        }
+
+        // Blur effect script, when the user scrolls down 50px from the top of the document, change header and sidebar properties
+        window.onscroll = function () { scrollFunction() };
+        var scrolledPast = false;
+        function scrollFunction() {
+
+            var scrollFromTop = 70;
+            if (window.scrollY > scrollFromTop) {
+                scrolledPast = true;
+                document.querySelector(".header").classList.add("scrolled");
+                document.querySelector(".header").classList.remove("ontop");
+            }
+            if (window.scrollY <= scrollFromTop) {
+                scrolledPast = false;
+                document.querySelector(".header").classList.remove("scrolled");
+                document.querySelector(".header").classList.add("ontop");
+            }
+        }
+    </script>
+</body>
+</html>

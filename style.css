@@ -1,0 +1,1488 @@
+@font-face {
+    font-family: SF_default;
+    src: url("./media/SF-Pro.woff");
+ }
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* General Link Hover settings */
+a:hover{
+    text-decoration: underline;
+}
+
+/* Header class for staple header of website */
+.header{
+    background:rgba(199, 199, 199, 0);
+    position: fixed;
+    top:0; left:0;
+    display:flex;
+    align-items:normal;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0px 0em;
+    width:100%;
+    height: 3em;
+    font-size: 2em;
+    transition: 130ms;
+    overflow:hidden;
+    z-index: 99;
+}
+
+/* Header options when screen is not at top / scrolled */
+.header.scrolled {
+    background-color: rgba(255, 255, 255, 0.146) !important;
+    transition: 130ms;
+    position: fixed;
+    display:flex;
+    backdrop-filter: contrast(1.3) blur(12px);
+    padding: 0em 0em;
+    height: 2em;
+    border-bottom: 1px solid rgb(102, 102, 102);
+}
+
+/* Styling of links in header */
+.header a{
+	color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    display:block;
+    overflow:hidden;
+    border-radius: 25px;
+    width: auto;
+    margin: 0.5em 0.4em;
+    padding: 0em 0.7em;
+    text-decoration: none;
+
+}
+
+/* Styling for multiple link items on header for personalized look */
+.header a + a{
+    background-color:rgba(0, 0, 0, 0.055);
+    text-align: center;
+    line-height: 2em;
+    margin: 0.3em 0.4em;
+    padding: 0.2em 0.7em;
+}
+
+/* Styling for multiple link items on header while scrolled is True for personalized look */
+.header.scrolled a+a{
+	color: black;
+    text-align:center;
+    line-height: 1em;
+    margin: 0.3em 0.4em;
+    padding: 0.2em 0.7em;
+}
+
+/* Header link options while link is hovered */
+.header a:hover{
+    background-color:#3085a3;
+}
+
+/* Header link options while link is hovered and scrolled is True */
+.header.scrolled a:hover{
+    background-color:#0a0f1146;
+
+}
+
+/* First item of header class styling */
+.header a:first-child{
+    margin: 0em 0em;
+    flex-shrink: 1;
+}
+
+/* Chooses the "Royal Learning" text in the header ( 2nd child) */
+.header a:nth-child(2){
+    visibility:visible;
+}
+
+/* Last item of header class styling */
+.header a:last-child{
+    width: 150px;
+    visibility: hidden;
+}
+
+/* Styling of Images on header class */
+.header img{
+    margin: 0em 0.7em;
+    height:100%;
+    width:auto;
+    flex-flow: nowrap;
+}
+
+    /* Side Bar */
+/* Styling for class sidebar which is used for the staple menu on the left of the screen */
+.sidebar{
+    border: 0px solid rgb(88, 88, 88);
+    position: fixed;
+    border-radius: 25px;
+    overflow: hidden;
+    visibility: visible;
+    display:block;
+    margin: 5em 0em;
+    max-width: 15em;
+    width: 20%;
+    top:150px;
+    padding: 8px;
+    width:auto;
+    left: 20px;
+    background-color: rgba(20, 192, 112, 0);
+    color:rgb(255, 255, 255);
+    z-index: 98;
+    transition: 130ms;
+}
+
+/* Effect of sidebar while we are at the top of the page (is not used in every page but only selectively) */
+.sidebar.top-effect{
+    background-color: rgba(20, 192, 112, 0);
+    transition: 130ms;
+}
+
+/* Blur effect of the sidebar */
+.sidebar.blur-effect{
+    border: 2px solid rgb(88, 88, 88);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: opacity(0.1);
+    backdrop-filter: blur(15px);
+    transition: 130ms;
+}
+
+/* Styling of links/sections in the menu/sidebar */
+.sidebar a{
+    font-size: 3em;
+    transition: 0.3s;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px 8px;
+    margin: 0px 1px;
+    border-radius: 15px;
+    border: 10px black;
+    text-decoration: none;
+    color: rgb(233, 233, 233);
+    display: block;
+}
+
+/* Link styling in sidebar while hovered */
+.sidebar a:hover{
+    background-color: #7575757e;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Link styling in sidebar while we have scrolled / the sidebar has the blur effect */
+.sidebar.blur-effect a{
+    color: rgb(0, 0, 0) !important;
+}
+
+/* Hovered link styling in sidebar while we have scrolled / the sidebar has the blur effect */
+.sidebar.blur-effect a:hover{
+    background-color: #75757565;
+    transition:cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+/* Default picture settings for the top/header picture , the default picture is for the Programming course page */
+.course_pic{
+    background-image: url("./media/prog_course_header.jpg");
+    display: block;
+    max-width: 89.25%;
+    /* Set a specific height */
+    min-height: 80vh;
+    top:0;
+    left:0;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -13;
+}
+
+/* IDs for pictures at the top of Home/Japanese/Entrepreneuership pages */
+#japanese.course_pic{
+    background-image: url("./media/jap_course_header.jpg");
+}
+
+#enter.course_pic{
+    background-image: url("./media/entrepren_course_header.jpg");
+}
+
+#homepage.course_pic{
+    background-image: url("./media/main_page_header.jpg");
+}
+
+/* Class article for each individual course provided by the site */
+.article{
+    display: flex;
+    position: relative;
+	overflow-x:hidden;
+	flex-direction: column;
+	text-align:left;
+    margin: 0em -0.5em 0em -2em;
+    padding: 3em 5em 3em 20em;
+
+	box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+/* IDs for specific coloring of sections throughout the website */
+#blue{
+	background-color: #9595D0;
+}
+
+#red{
+	background-color: #EB595C;
+}
+
+#green{
+	background-color: #48A8A8;
+}
+
+#orange{
+	background-color: #FC9240;
+}
+
+#orange_btn{
+	background-color: #FC9240;
+}
+
+#pink{
+	background-color: #D7849A;
+}
+
+/* Article class h1 styling */
+.article h1{
+	 text-decoration: none;
+    font-family: SF_default, sans-serif, Arial;
+    font-size: 6em;
+}
+
+/* Article class h2 and link styling */
+.article h2 a{
+    color: rgb(83, 93, 236);
+    text-decoration: none;
+    font-family: SF_default, sans-serif, Arial;
+    font-size: 1.5em;
+}
+
+/* Article class h3 styling */
+.article h3{
+    font-family: SF_default, sans-serif, Arial;
+    font-size: 2em;
+}
+
+/* Article h2 link hover styling */
+.article h2 a:hover{
+    text-decoration: underline;
+}
+
+/* Article h2 link active styling */
+.article h2 a:active{
+    text-decoration: underline;
+    text-shadow:0px 0px 4px rgb(29, 29, 29);
+}
+
+/* Class for flex containers that have the image + text portion of each section in each course */
+.img-textContainer{
+	display:flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+/* Paragraph styling inside article class */
+.article p{
+    border: 0px solid black;
+    font-family: Calibri,sans-serif, Arial;
+    display: block;
+
+	padding-left: 2rem;
+    padding-right: calc(1em + 0.25vw);
+    text-align: left;
+    position: relative;
+    width: 50%;
+	font-size: 1.8em;
+}
+
+/* Title + List Container in courses */
+.TitleListContainer{
+    padding: 0em 0em;
+    width: 40%;
+    text-align: left;
+}
+
+/* Image styling inside article class */
+.article img{
+    display:inline-block;
+    object-fit: cover;
+	background-position: center;
+    background-repeat: no-repeat;
+    height: 300px;
+    flex-shrink: 0;
+    width: 300px;
+    border-radius: 5px;
+}
+
+/* Unordered list styling inside article class */
+.article ul{
+    display: inline-block;
+    margin-left: 10px;
+	font-size: 1.5em;
+	font-family: Calibri,sans-serif, Arial;
+}
+
+    /*----------SUPPORT FORM CSS--------------*/
+
+/* Class for flex sections of support page */
+.form-container{
+    display:flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content:end;
+    position: relative;
+    /*width: 90%;*/
+	margin: 0.1em 3em 0em 0em;
+    padding: 0em 0em 0em 0em;
+    list-style-type: none;
+    font-family: sans-serif, Calibri, Arial;
+    font-size: 1.25em;
+}
+
+/* Styling of label inside form container */
+.form-container > label{
+	text-align:right;
+    padding-right: 2%;
+}
+
+/* Hover effect on support flex containers */
+.form-container:hover{
+    background-color: rgba(255, 255, 255, 0);
+}
+
+/* Optional user comment styling */
+#special-input{
+    align-items: baseline;
+}
+
+/* Styling for the external container of support page forms */
+.support_form{
+    display:flex;
+    position: relative;
+    justify-content:center;
+    vertical-align: center;
+    margin: 20em 5em 5em 0em;
+    padding: 0;
+}
+
+/* Individual Sections in Sign Up Form that have a sign up style (first three sections) */
+.signup_form{
+    display:flex;
+    position: relative;
+    justify-content:center;
+    vertical-align: center;
+    margin: 3% 0;
+    padding: 0;
+    border-radius: 25px;
+    border: 2px solid rgb(88, 88, 88);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+}
+
+/* Sign Up Form Legend styling */
+.signup_form legend {
+    float: left;
+    margin-bottom: 0em;
+    font-size: 1.5em;
+    margin-left: 5%;
+    font-family: sans-serif, Calibri, Arial;
+}
+
+
+/* Sign Up Form Unordered List styling */
+.signup_form ul{
+    padding-left: 5%;
+    padding-inline-start: 20px;
+}
+
+/* Individual Sections in Sign Up Form that have a question style ( 10 questions ) */
+.question_form{
+    display:flex;
+    position: relative;
+    text-align: center;
+    justify-content:left;
+    align-items: center;
+    min-height:6em;
+    min-width: 30em;
+    margin: 3% 0;
+    padding:0;
+    border-radius: 25px;
+    border: 2px solid rgb(88, 88, 88);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+}
+
+/* The question section of the question form styling */
+.question_form h1{
+    font-size:1.5em;
+    margin-block-start: 0em;
+    margin: 2em 0em 2em 0.5em;
+    width:60%;
+    height: 100%;
+    color: #000000;
+    text-align:start;
+    font-family: sans-serif, Calibri, Arial;
+}
+
+
+.button_form{
+    border-radius: 35px;
+    border: 2px solid rgb(88, 88, 88);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(15px);
+    font-size: 1.5em;
+    width: 25%;
+    height: 3em;
+}
+
+summary{
+    list-style-type: '';
+    
+}
+
+details[open] > summary {
+    list-style-type: '';
+}
+
+/* ID for the big title before the question forms */
+#h1_supportPageQuestions{
+    color: #000000;
+    text-align: center;
+    font-family: sans-serif, Calibri, Arial;
+    font-size:3em;
+    margin-top: 1em;
+    cursor: pointer
+}
+
+/* Sign Up form Icons styling */
+.small_button{
+    position: relative;
+    height: 35px;
+    width: 35px;
+    background-color: transparent;
+    border: none;
+    top: 10px;
+    margin-left: -50px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: 99;
+}
+
+.icon{
+    height: 32px;
+    width: 32px;
+    padding:2px 10px;
+
+    margin-left: -25px;
+    border-radius: 25px;
+}
+
+/* Styling for the available card icons */
+.icon_small{
+    height: 42px;
+    width: 42px;
+    padding:2px 10px;
+    border-radius: 25px;
+}
+
+#mastercard.icon_small{
+    height: 48px;
+    width: 48px;
+    content: url(./media/cc_icon1.png);
+}
+
+#visa.icon_small{
+    content: url(./media/cc_icon2.png);
+}
+
+#am_ex.icon_small{
+    content: url(./media/cc_icon3.png);
+}
+
+/* Password eye icon hide/show and hover effects */
+.icon_hide{
+   content:url("./media/hide_pw.png");
+}
+
+.icon_show{
+    content:url("./media/view_pw.png");
+}
+
+.icon:hover{
+
+    background-color: rgba(112, 112, 112, 0.733);
+}
+
+.question_container{
+
+}
+
+/* Styling of Class for specific radiobox question answers */
+.radiobox {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin:6px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: sans-serif, Calibri, Arial;
+}
+
+/* Hide the browser's default radio button */
+.radiobox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: rgba(238, 238, 238, 0.507);
+    border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.radiobox:hover input ~ .checkmark {
+    background-color: #cccccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.radiobox input:checked ~ .checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.radiobox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.radiobox .checkmark:after {
+    top: 9px;
+    left: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* Container that has the slider */
+.sliderContainer {
+    margin-top: 1em;
+    width: 100%;
+}
+
+/* Slider in slider type question styling */
+.sliderQuestion {
+    -webkit-appearance: none;
+    width: 90%;
+    height: 15px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.sliderQuestion:hover {
+    opacity: 1;
+}
+
+.sliderQuestion::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.sliderQuestion::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #04AA6D;
+    cursor: pointer;
+}
+
+.sliderContainer p{
+    font-family: sans-serif, Calibri, Arial;
+    text-align: center;
+    font-size: 2em;
+}
+
+.question_form textarea{
+    resize:none;
+    display:inline-block;
+    font-size: 1.5em;
+    max-height:20em;
+    min-height: 10em;
+    overflow:auto;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    color: #000;
+    position: relative;
+    padding: 5px;
+    margin-top: 0px;
+    font-family: sans-serif, Calibri, Arial;
+  }
+
+  #message p {
+    padding: 0;
+    font-size: 0.8em;
+  }
+
+  /* Add a green text color and a checkmark when the requirements are right */
+  .valid {
+    color: green;
+  }
+
+  .valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+  }
+
+  /* Add a red text color and an "x" when the requirements are wrong */
+  .invalid {
+    color: red;
+  }
+
+  .invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+  }
+
+
+.autocomplete {
+    position: relative;
+    display: inline-block;
+}
+
+/*position the autocomplete items to be the same width as the container:*/
+.autocomplete-items {
+    position: absolute;
+    border-radius: 15px;
+    border-top: none;
+    border-bottom: none;
+    background-color: rgba(255, 255, 255, 0.87);
+    z-index: 199;
+    width: 50%;
+    left: 0;
+    right: 0;
+    bottom: 50px;
+}
+
+.autocomplete-items div {
+    padding: 3px;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+    background-color: #8b8b8b9f;
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+}
+
+
+
+
+
+
+
+
+/* Styling for the internal container which contains a label and a form */
+.input-support{
+    border-radius: 35px;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.431);
+    backdrop-filter: contrast(1.3) blur(15px);
+    margin: 7px 0px;
+    width: 15em;
+    height: 1.5em;
+    padding:0px 15px;
+    font-size: 1em;
+    border: 2px solid rgba(255, 255, 255, 0);
+}
+
+/* Special case for when the user is typing input but his mouse is away */
+.input-support:focus:hover {
+    background-color: rgb(255, 255, 255);
+    outline: none;
+}
+
+/* Normal focus styling of input */
+.input-support:focus {
+    background-color: rgb(255, 255, 255);
+    outline: none;
+
+}
+
+/* Hover stlying on input section */
+.input-support:hover{
+    background-color: rgba(255, 255, 255, 0.733);
+    outline: none;
+}
+
+/* Button "submit" styling */
+input [type="submit"]{
+    background-color: rgba(50, 163, 22, 0.986)
+}
+
+/* Text area , used for specific resizable input box for the optional comment section */
+.form-container textarea{
+    resize:vertical;
+    display:inline-block;
+
+    max-height:10em;
+    min-height: 3em;
+    min-width: 10em;
+    overflow:auto;
+}
+
+/* Styling of external container before the text area for the optional comment */
+.twit-style-container{
+	display:flex;
+	flex-direction: column;
+}
+
+.twit-style-container a{
+	margin-right: 2em;
+}
+
+/* ID to style the number of characters left in the optional comment section */
+#current-chars{
+	font-weight: normal;
+	text-align: right;
+}
+
+    /* Switch/button styling */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    max-width: 60px;;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 100px;
+    height: 0;
+}
+
+/* The slider - styling of button - input checking  */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    width: 60px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.431);
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    border-radius: 50%;
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:hover{
+    background-color: #cccccc;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+/* Submit button IDs for when hovered or active */
+#btn_submit:hover{
+    background-color: rgba(0, 128, 0, 0.863);
+}
+
+#btn_submit:active{
+    background-color: rgb(0, 110, 0, 0.863);
+    box-shadow: 2px 3px 5px #000000;
+}
+
+/* General footer class for footer , styling */
+.footer{
+    text-align: center;
+    clear: both;
+    background: #2c2222;
+    color: white;
+    padding-top: 10px;
+    font-size: 20px;
+    margin: 0em -0.4em -0.5em -1.5em;
+    bottom: 50%;
+    height: 110px;
+    width: auto;
+}
+
+/* ID used for support page to customize the footer to go well with the  page */
+#footer-support{
+    border: 2px solid rgb(88, 88, 88);
+    background-color: rgba(255, 255, 255, 0.02);
+    backdrop-filter: opacity(0.1);
+    backdrop-filter: blur(20px);
+    width:60%;
+    min-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
+    font-family: sans-serif, Calibri, Arial;
+    vertical-align: top;
+    border-radius: 25px;
+}
+
+#footer-support a:hover{
+    color:#b8321a;
+}
+
+/* Links , active and hover options for footer class */
+.footer a{
+    color: rgb(83, 93, 236);
+    text-decoration: none;
+}
+
+.footer a:hover{
+
+    color: chartreuse;
+
+    text-decoration: underline;
+}
+
+.footer a:active{
+    color: rgba(128, 255, 0, 0.486);
+}
+
+/* Body general styling */
+body{
+    padding: 0;
+    margin-top: 0em;
+}
+
+/* Styling of the bigger flex container in <main> */
+.container-main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0em -0.5em 0em -2em;
+}
+
+.container-signup{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 5em 10% 10em 20em;
+    padding: 1em;
+}
+
+#special_input_support{
+    align-items: baseline;
+}
+
+#special-input{
+    flex-direction: row;
+}
+
+#support_bigtext{
+    width: 90%;
+}
+
+/* Styling of articles , img-text containers while screen < 1200px */
+@media only screen and (max-width: 1200px) {
+    .sidebar{
+        visibility: visible;
+    }
+    .sidebar.blur-effect, .sidebar.top-effect{
+        visibility: visible;
+    }
+    .sidebar a {
+      text-align: center;
+      float: none;
+    }
+
+    .TitleListContainer{
+        padding: 0em 0em;
+        width: 80%;
+        text-align: left;
+    }
+    .article img{
+        height:auto;
+        width: 25vw;
+    }
+    .article{
+        padding: 2em 1em 2em 20em;
+    }
+
+	.img-textContainer{
+		flex-direction:row;
+        flex-wrap: wrap;
+		justify-content: flex-start;
+	}
+
+    /* Custom rule for when you resize width from 700 px to 1200 px */
+    .header a:last-child{
+        visibility: hidden;
+    }
+
+    .header a:nth-child(2){
+        visibility: visible;
+    }
+
+	.article h1{
+		font-size: 8vw;
+        padding-top: 1em;
+	}
+
+	.article p{
+		text-align: left;
+		padding: 0em 0em 0em 2%;
+		width: 57%;
+	}
+
+	.img-textContainer img{
+        padding: 0em 0em;
+	}
+
+    .form-container{
+        flex-direction: column;
+    }
+
+    .container-signup{
+        margin: 15% 0% 15% 28%;
+    }
+
+    #special_input_support{
+        align-items: center;
+    }
+}
+
+
+
+/* Styling of sidebar , sidebar with blurred effect , article , image-text container and signup containers while screen < 850px */
+@media only screen and (max-width: 850px) {
+    .sidebar {
+        width: 90%;
+        visibility: hidden;
+        top: 3.5em;
+        max-width: 90%;
+        height: auto;
+        position: fixed;
+        margin: 2em 0em;
+        border: 2px solid rgb(88, 88, 88);
+        background-color: rgba(255, 255, 255, 0.02);
+        backdrop-filter: opacity(0.1);
+        backdrop-filter: blur(15px);
+    }
+
+    .sidebar.blur-effect, .sidebar.top-effect{
+
+        position: fixed;
+    }
+
+	.article h1{
+        padding-top: 1em;
+	}
+
+    .sidebar a {
+        color: rgb(0, 0, 0);
+        float: none;
+        text-align: left;
+    }
+    .header{
+        justify-content: stretch;
+    }
+
+    .header a:first-child{
+
+    }
+    .header a:last-child{
+        visibility: visible;
+    }
+    .header a:nth-child(2){
+        visibility: hidden;
+    }
+    .article{
+        font-size: 1.3em;
+        padding: 1em 2em 4em 3em;
+    }
+    .article p{
+        width: 100%;
+    }
+
+    .img-textContainer img{
+        padding: 1em 2em;
+        width:500px;
+        height: auto;
+        margin: auto;
+    }
+
+    .form-container{
+        flex-direction: row;
+        font-size: 1em;
+    }
+    .container-signup{
+        margin: 4em 0 1em;
+    }
+
+    #special-input{
+        flex-direction: column;
+    }
+
+    #special-input h1{
+        margin: 2% 5%;
+    }
+
+    #support_bigtext{
+        margin: 0% auto;
+        padding: 1.2%;
+        width: 90%;
+    }
+
+    #support_bigtext_container{
+        width: 100%;
+    }
+
+    #special_input_support{
+        align-items: baseline;
+    }
+
+
+}
+
+    /* Helper Classes */
+
+/* Helper class 1 , used in page title section ( top part that says what the page is) */
+.display-1{
+    font-weight: 700;
+    line-height: 1;
+    font-size: 3.75rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+/* Dispay 1 when screen < 850px styling */
+@media(max-width:850px){
+    .display-1{
+        padding: 1em;
+    }
+}
+
+/* Helper class 1 , used in section titles */
+.display-2{
+    font-weight: 700;
+    line-height: 1;
+    font-size: 3.75rem;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #eeeb4b;
+}
+
+/* General optimizations for footer header classes and headers */
+.footer .section-title, .h1, h1, .h2, h2, h3{
+    color: #00262b;
+    font-weight: 700;
+    line-height: 1.25;
+    font-size: 1.25em;
+    margin-bottom: 0.5rem;
+}
+
+/* Content is the class used for smaller flex boxes inside each pages sections */
+.content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    flex-basis: 90%;
+}
+
+/* Image styling inside content sections */
+.content img{
+    display: block;
+    min-width: 220px;
+    max-width: 350px; /*actual image width*/
+    width: 80%;
+    height: auto; /* maintain aspect ratio*/
+    margin: auto;
+    object-fit: cover;
+}
+
+
+@media(max-width:850px){   /* Styling of content when screen < 850px */
+   .content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex-basis: 90%;
+    }
+    .content div img{
+        align-self:center;
+        width: 320px;
+        height: 260px;
+    }
+
+}
+
+/* Styling of unique sections inside content boxes ( paragraph , h2 , div , img ) */
+.content p{
+    flex: 1;
+    padding:3em;
+}
+
+.content h2{
+    text-align: center;
+}
+
+.content div{
+    flex: 0.5;
+}
+
+.content img{
+    display: block;
+    width: 80%;
+     /*actual image width*/
+    height: auto; /* maintain aspect ratio*/
+    margin: auto;
+}
+
+/* Class h1 used as styling for h1 on page titles ( home , about_us , courses ) */
+.h1{
+    flex:1;
+    padding: 60px;
+    text-align: center;
+    color: #55a33d;
+    background-color: rgb(158, 165, 65);
+    margin: 0em -0.5em 0em -2em;
+}
+
+    /* About Us Classes */
+
+/* about_us_1 = 1st section of about us (Makridis)
+   about_us 2 = 2nd section of about us (Stefanis) */
+@media(min-width:1080px){   /* Styling of about us sections with screen > 1080px */
+    .about_us_1{
+        background-color: rgb(119, 119, 214);
+        padding:160px;
+    }
+
+    .about_us_2{
+        background-color: #793779;
+        padding:160px;
+    }
+
+}
+
+.about_us_1{
+    background-color: rgb(119, 119, 214);
+    padding: 100px;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+.about_us_2{
+    background-color: #793779;
+    padding: 100px;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+@media(max-width:1080px){   /* Styling of about us sections with screen < 1080px */
+    .about_us_1{
+        background-color: rgb(119, 119, 214);
+        padding: 80px 100px;
+    }
+
+    .about_us_2{
+        background-color: #793779;
+        padding: 80px 100px;
+    }
+}
+
+/* Styling of h2 in about us sections / titles with names */
+.about_us_1 h2 , .about_us_2 h2{
+    text-align: center;
+    padding: 10px;
+}
+
+/* Styling of paragraphs in about us sections */
+.about_us_1 p , .about_us_2 p{
+    font-size: 20px;
+    font-family:sans-serif;
+    min-width: 320px;
+}
+
+/* Styling of links in about us sections */
+.about_us_1 a , .about_us_2 a{
+    text-decoration: none;
+    color: chartreuse;
+}
+
+/* Link hover in about us sections */
+.about_us_1 a:hover, .about_us_2 a:hover{
+    text-decoration: underline;
+    text-shadow:0px 0px 3px black;
+}
+
+/* Link active in about us sections */
+.about_us_1 a:active, .about_us_2 a:active{
+    text-shadow:0px 0px 5px black;
+}
+
+    /* Main Classes */
+
+/* Class referring to the whole box of the slideshow */
+.slidesBox{
+    margin: 0em -0.5em 0em -2em;
+    display: flex;
+    flex: 1;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+/* Common class for the items inside the slidesBox */
+.mySlides{
+    display: block;
+    width: 60em;
+    min-width: 300px;
+    border: 2px rgb(0, 0, 0) solid;
+}
+
+.mySlides:hover{
+    filter:drop-shadow(0px 8px 15px rgb(0, 0, 0));
+    -webkit-filter:drop-shadow(0px 8px 15px rgb(0, 0, 0));
+    transition: 0.4ms;
+}
+
+.mySlides:active{
+    filter:drop-shadow(0px 8px 12px rgb(0, 0, 0));
+    -webkit-filter:drop-shadow(0px 8px 12px rgb(0, 0, 0));
+    transition: 0.4ms;
+}
+
+/* Helper class to remove content while screen is smaller than 1080 px */
+@media only screen and (max-width:1080px){   /* When screen < 1080 px , content gets removed */
+    .hide-on-small-screen{
+        display:none;
+    }
+}
+
+/* Class for the 2 buttons of slideshow (left and right) */
+.slide-button{
+    border: none;
+    padding: 8px 16px;
+    overflow: hidden;
+    text-decoration: none;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border: 1px black solid;
+}
+
+/* Styling of slideshow buttons while hovering them - mostly shadowing */
+.slide-button:hover{
+    -webkit-box-shadow: inset 0px 0px 24px 1px #000000;
+    box-shadow: inset 0px 0px 24px 1px #000000;
+    -moz-box-shadow: inset 0px 0px 24px 1px #000000;
+}
+
+/* Styling of slideshow buttons while clicking them - mostly shadowing */
+.slide-button:active{
+    -webkit-box-shadow: inset 0px 0px 34px 1px #000000;
+    box-shadow: inset 0px 0px 34px 1px #000000;
+    -moz-box-shadow: inset 0px 0px 34px 1px #000000;
+}
+
+/* Class for left button of slideshow */
+.button-display-left{
+    margin-right:0;
+}
+
+/* Class for right button of slideshow */
+.button-display-right{
+    margin-left: 0;
+}
+
+/* Classes for each individual section of the home page */
+
+/* "Become an Instructor" section styling */
+.instructor{
+    padding: 100px;
+    font-size: 30px;
+    font-family: cursive;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+/* "Expand your knowledge" section styling */
+.knowledge{
+    padding: 100px;
+    font-size: 30px;
+    font-family: cursive;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+/* "Transform your life" section styling */
+.education{
+    padding: 100px;
+    padding-bottom: 0;
+    font-size: 30px;
+    font-family: cursive;
+}
+
+/* Three previous sections same img styling */
+.instructor img , .knowledge img , .education img{
+    border: 1px rgb(0, 0, 0) solid;
+}
+
+/* "Start Now" button styling */
+.button{
+    padding-bottom: 100px;
+    text-align: center;
+    justify-content: center;
+    box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-webkit-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+	-moz-box-shadow: 0px -56px 42px -49px rgba(0,0,0,0.75) inset;
+}
+
+.button a{
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 36px;
+}
+
+.button a:hover{
+    color: rgb(75, 218, 206);
+    background-color: rgb(158, 44, 44);
+}
+
+.button a:active{
+    color: rgb(75, 218, 206);
+    background-color: rgb(158, 44, 44);
+    box-shadow: 4px 4px 17px rgb(0, 0, 0);
+}
+
+/* Courses Classes */
+.Courses{
+    flex: 1;
+    justify-content:center;
+    padding-right: 0px;
+    padding-bottom: 90px;
+    background-color: #3085a3;
+
+}
+
+/* Courses img styling */
+.Courses img{
+    border:2px #2c2222 solid;
+    width: 312px;
+    height: 220px;
+}
+
+/* Courses list styling */
+.Courses li{
+    font-size: 20px;
+}
+
+/* Courses link styling */
+.Courses a{
+    text-decoration: none;
+    color: #194d09;
+}
+
+/* Courses hover state on links styling */
+.Courses a:hover{
+    text-decoration: underline;
+    color: #912222;
+}
+
+/* Stryling of links while clicked */
+.Courses a:active{
+    text-decoration:underline;
+    text-shadow: 0px 0px 3px #7c0606;
+}
+
+/* Styling class for the course menu titles */
+.course-title{
+    background-color: #3085a3;
+    text-align: center;
+    margin:0;
+    padding-top: 150px;
+    border-top: 1px rgb(0, 0, 0) solid;
+    color: #912222;
+    font-size: 300%;
+}

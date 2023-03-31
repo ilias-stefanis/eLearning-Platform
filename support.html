@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="./global_funcs.js"></script>
+        <title>Support</title>
+
+        <style>
+            body {
+                background: url("./media/support_page_splash.jpg") no-repeat center center fixed;
+                background-repeat: no-repeat;
+                background-size:  cover;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="header">
+            <a href="./index.html"><picture><img  src="./media/xxeelg0amua51.png" alt="royal_logo"></picture>
+            </a>
+            <a href="./index.html">Royal Learning</a>
+            <a href="javascript:void(0)" onClick="menuToggle();">Menu</a>
+        </div>
+
+        <div class="sidebar" >
+            <a href="./index.html">Home</a>
+            <a href="./courses.html">Courses</a>
+            <a href="./AboutUs.html">About Us</a>
+            <a href="./support.html">Support</a>
+            <a href="./signUp.html">Sign Up</a>
+        </div>
+
+        <div class="support_form">
+            <form>
+
+                <ul class="h2">
+
+                        <li class="form-container">
+
+                            <label for="txt_name">Name: </label>
+                            <input class="input-support" type="text" id="txt_name" placeholder="name" name="name" required>
+                        </li>
+                        <li class="form-container">
+
+                            <label for="txt_email">Email: </label>
+                            <input class="input-support"  type="email" id="txt_email" placeholder="abc@email.com" name="email" required>
+                        </li>
+
+                        <li class="form-container">
+
+                            <label for="type_of_question">Reason for communication: </label>
+                            <select class="input-support" id="type_of_question" name="type">
+                                <optgroup label="Question">
+                                    <option value="about_site">About the site</option>
+                                    <option value="about_service">About our service</option>
+                                </optgroup>
+                                <optgroup label="Complain">
+                                    <option value="about_site">Complain about our service</option>
+                                    <option value="about_service">Other unspecified</option>
+                                </optgroup>
+                            </select>
+                        </li>
+
+                        <li class="form-container" id="special_input_support">
+
+                            <label for="comment">Comment: </label>
+                            <div class="twit-style-container">
+                                <textarea class="input-support" id="comment" name="comment" maxlength="200" oninput="charCount()" placeholder="(optional) Type your comment here."></textarea>
+                                <a id="current-chars">200/200</a>
+                            </div>
+                        </li>
+
+                        <li class="form-container">
+                            <label>You have to accept out Terms of Service to continue</label>
+
+                            <label class="switch">
+                                <input type="checkbox" required>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+
+                        <li class="form-container">
+                            <label>Do you want to receive our newsletter?</label>
+                            <label class="switch">
+                                <input type="checkbox" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </li>
+
+
+                        <li class="form-container">
+
+                            <input class="input-support" type="submit" id="btn_submit" name="submit">
+                        </li>
+
+                </ul>
+            </form>
+        </div>
+
+        <footer class="footer" id="footer-support">
+            <p>Learn more about our team <a href="./AboutUs.html">here</a>!. Or contact us on +30 210 9999999</p>
+            <p>Visit out social media!
+                <a href = https://www.facebook.com/%3E>facebook </a>
+                / <a href = https://www.reddit.com/%3E>reddit</a>
+                / <a href = https://www.linkedin.com/%3E>LinkedIn.</a>
+            </p>
+        </footer>
+
+        <script>
+
+            document.querySelector(".sidebar").classList.add("blur-effect");
+            function charCount() {
+                var currentLength = document.getElementById("comment").value.length;
+                var maxLength = document.getElementById("comment").maxLength;
+                document.getElementById("current-chars").innerHTML = maxLength - currentLength + "/200";
+            }
+        </script>
+    </body>
+
+</html>
